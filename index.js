@@ -19,10 +19,6 @@ const Customer = mongoose.model('Customer', new Schema({
 
 
 
-// Customer.collection.insertOne({
-//   fname : "John",
-//   lname: "Doe"  
-// })
 
 Customer.find({fname : "John"}, 'lname')
 .then(console.log)
