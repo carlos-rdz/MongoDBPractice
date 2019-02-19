@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_database');
+mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -17,12 +17,15 @@ const Customer = mongoose.model('Customer', new Schema({
   lname: String
 }));
 
+const Tests = mongoose.model("Tests", new Schema ({
+  string1 : String,
+  string2 : String
+}))
 
+// const Test2 = new Tests({string1 : 'test', string2: 'test2'})
+// Test2.save()
 
+// Test.find({string1 : "test"}, 'string2')
+// .then(console.log)
 
-Customer.find({fname : "John"}, 'lname')
-.then(console.log)
-
-// Customer.collection.remove({
-//   fname : "John Doe"
-// })
+// mongoose.disconnect();
