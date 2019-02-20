@@ -3,7 +3,7 @@
 const config = {
   mongodb: {
     // TODO Change (or review) the url to your MongoDB:
-    url: "mongodb://localhost/my_database",
+    url: 'mongodb://localhost/my_database',
 
     // TODO Change this to your database name:
     databaseName: "my_database",
